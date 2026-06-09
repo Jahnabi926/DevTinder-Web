@@ -2,7 +2,7 @@ import { Outlet } from "react-router";
 import NavBar from "./Navbar";
 import Footer from "./Footer";
 
-const App = () => {
+const AuthLayout = () => {
   return (
     <div>
       <NavBar />
@@ -12,4 +12,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default AuthLayout;
