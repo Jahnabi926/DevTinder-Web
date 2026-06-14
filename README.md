@@ -11,6 +11,20 @@
 -- Install react router
 -- Create Routes and Outlet
 -- Create Footer component to App.jsx
+-- Create a Login Page
+-- Install axios
+-- CORS - Install cors in backend => add midddleware to app with configurations: origin and credentials: true
+
+-- Whenever you're making an API call, pass axios => {withCredentials: true} in frontend code. Else it will not send the "token" back. CHECK "token" inside Applications tab. The Cookie should have a token. It helps in authentication, while making a network request.
+
+-- Install react-redux + @reduxjs/toolkit => https://redux-toolkit.js.org/tutorials/quick-start
+
+-- ConfigureStore => Provider => createSlice => add reducer to Store => add data to the redux store using useDispatch hook and by dispatching an action => Subscribe(reading data from store) to the store using useSelector.
+
+-- Add Redux devtools in chrome.
+-- Login and see if data is displaying properly in the store
+-- NavBar should update as soon as user logs in
+-- Refactor our code to add constants file + create a components folder
 
 # App Structure
 
@@ -20,3 +34,11 @@ Route=/ => Feed
 Route=/login => Login
 Route=/connections => Connections
 Route=/profile => Profile
+
+# 📋 The Ultimate QA Cheat Sheet for Http status & error codes
+
+1. 100s: "Hold on, I'm thinking." (Information) [🔍]
+2. 200s: "Here you go, all good!" (Success) [🔍]
+3. 300s: "Go over there instead." (Redirect) [🔍]
+4. 400s: "You messed up, Frontend." (Client Error) [🔍]
+5. 500s: "I messed up, Backend." (Server Error) [🔍]

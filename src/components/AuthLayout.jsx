@@ -1,5 +1,5 @@
 import { Outlet } from "react-router";
-import NavBar from "./Navbar";
+import NavBar from "./NavBar";
 import Footer from "./Footer";
 
 const AuthLayout = () => {

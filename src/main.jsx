@@ -4,11 +4,14 @@ import { RouterProvider } from "react-router/dom";
 
 import "./index.css";
 import App from "./App.jsx";
-import Body from "./Body.jsx";
-import AuthLayout from "./AuthLayout.jsx";
-import Login from "./Login.jsx";
-import Register from "./Register.jsx";
-import Profile from "./Profile.jsx";
+import Body from "./components/Body.jsx";
+import AuthLayout from "./components/AuthLayout.jsx";
+import Login from "./components/Login.jsx";
+import Register from "./components/Register.jsx";
+import Profile from "./components/Profile.jsx";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore.js";
+import Feed from "./components/Feed.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "profile",
         Component: Profile,
+      },
+      {
+        path: "feed",
+        Component: Feed,
       },
     ],
   },
@@ -33,5 +40,9 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />,
+  <>
+    <Provider store={appStore}>
+      <RouterProvider router={router} />
+    </Provider>
+  </>,
 );
