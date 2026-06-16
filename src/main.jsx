@@ -10,6 +10,7 @@ import Register from "./components/Register.jsx";
 import Profile from "./components/Profile.jsx";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore.js";
+import Feed from "./components/Feed.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,8 +19,8 @@ const router = createBrowserRouter([
     children: [
       { index: true, Component: Body },
       {
-        path: "profile",
-        Component: Profile,
+        path: "feed",
+        Component: Feed,
       },
       {
         path: "login",
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "register",
         Component: Register,
+      },
+      {
+        path: "profile",
+        Component: Profile,
       },
     ],
   },
