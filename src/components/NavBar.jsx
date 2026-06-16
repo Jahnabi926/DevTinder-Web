@@ -1,13 +1,16 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router";
 
 const NavBar = () => {
-  const user = useSelector((store) => store.user?.user || store.user);
+  const user = useSelector((store) => store.user);
   console.log("Reading from the store", user);
 
   return (
     <div className="navbar bg-base-300 shadow-sm">
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl">👩‍💻 DevTinder</a>
+        <Link to="/" className="btn btn-ghost text-xl">
+          👩‍💻 DevTinder
+        </Link>
       </div>
       <div className="flex-none">
         {user && (
@@ -31,16 +34,16 @@ const NavBar = () => {
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
               >
                 <li>
-                  <a className="justify-between py-2">
+                  <Link to="/profile" className="justify-between py-2">
                     Profile
                     <span className="badge badge-sm badge-secondary">New</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="py-2">Settings</a>
+                  <Link className="py-2">Settings</Link>
                 </li>
                 <li>
-                  <a className="py-2 text-error font-medium">Logout</a>
+                  <Link className="py-2 text-error font-medium">Logout</Link>
                 </li>
               </ul>
             </div>

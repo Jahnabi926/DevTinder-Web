@@ -25,7 +25,7 @@ const Login = () => {
       );
       // console.log("User logged in with the data below -", res.data);
       dispatch(addUser(res.data));
-      navigate("/feed");
+      navigate("/profile");
     } catch (err) {
       console.error(err);
     }

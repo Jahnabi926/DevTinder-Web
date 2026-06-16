@@ -5,13 +5,11 @@ import { RouterProvider } from "react-router/dom";
 import "./index.css";
 import App from "./App.jsx";
 import Body from "./components/Body.jsx";
-import AuthLayout from "./components/AuthLayout.jsx";
 import Login from "./components/Login.jsx";
 import Register from "./components/Register.jsx";
 import Profile from "./components/Profile.jsx";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore.js";
-import Feed from "./components/Feed.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,17 +22,13 @@ const router = createBrowserRouter([
         Component: Profile,
       },
       {
-        path: "feed",
-        Component: Feed,
+        path: "login",
+        Component: Login,
       },
-    ],
-  },
-  {
-    path: "auth",
-    Component: AuthLayout,
-    children: [
-      { path: "login", Component: Login },
-      { path: "register", Component: Register },
+      {
+        path: "register",
+        Component: Register,
+      },
     ],
   },
 ]);
