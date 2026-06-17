@@ -31,6 +31,8 @@
 -- Get the feed and add the feed in the store
 -- Built the UserCard inside Feed page
 -- Built Edit Profile feature inside Profile
+-- Show Toast Message on Save Profile
+-- See all my connections
 
 # App Structure
 

@@ -62,7 +62,9 @@ const NavBar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link className="py-2">Settings</Link>
+                  <Link to="/connections" className="py-2">
+                    Connections
+                  </Link>
                 </li>
                 <li>
                   <Link
