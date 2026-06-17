@@ -34,6 +34,12 @@
 -- Show Toast Message on Save Profile
 -- New page to see all my connections
 -- New page to see all my connection requests
+-- Feature - Accept/Reject connection request
+
+Remaining:
+-- Send / Ignore the user card from Feed
+-- Sign up New user
+-- E2E Testing
 
 # App Structure
 
