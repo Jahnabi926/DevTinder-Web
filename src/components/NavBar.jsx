@@ -67,6 +67,12 @@ const NavBar = () => {
                   </Link>
                 </li>
                 <li>
+                  <Link to="/requests" className="py-2">
+                    Requests
+                  </Link>
+                </li>
+
+                <li>
                   <Link
                     className="py-2 text-error font-medium"
                     onClick={handlelogout}

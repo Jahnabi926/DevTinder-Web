@@ -32,7 +32,8 @@
 -- Built the UserCard inside Feed page
 -- Built Edit Profile feature inside Profile
 -- Show Toast Message on Save Profile
--- See all my connections
+-- New page to see all my connections
+-- New page to see all my connection requests
 
 # App Structure
 

@@ -12,6 +12,7 @@ import { Provider } from "react-redux";
 import appStore from "./utils/appStore.js";
 import Feed from "./components/Feed.jsx";
 import Connections from "./components/Connections.jsx";
+import Requests from "./components/Requests.jsx";
 
 const router = createBrowserRouter([
   {
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
       },
       {
         path: "requests",
-        Component: Profile,
+        Component: Requests,
       },
     ],
   },

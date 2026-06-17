@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import UserCard from "./UserCard";
 import axios from "axios";
 import { BASE_URL } from "../utils/constants";
@@ -29,11 +29,22 @@ const EditProfile = ({ user }) => {
       }); // withCredentials: true on App.jsx globally
       dispatch(addUser(res?.data?.data));
       setShowToast(true);
-      setTimeout(() => setShowToast(false), 3000);
     } catch (err) {
       setError(err?.response?.data || "Something went wrong");
     }
   };
+
+  useEffect(() => {
+    if (!showToast) return;
+
+    const timer = setTimeout(() => setShowToast(false), 3000);
+    return () => clearTimeout(timer);
+  }, [showToast]);
+
+  /**On page load — showToast is false → hits if (!showToast) return → exits immediately → no timer set.
+On save button click — setShowToast(true) → showToast changes to true → useEffect runs again → if (!showToast) is now false 
+so it doesn't return → timer starts → after 3 seconds toast disappears.
+So it only activates when the user actually clicks save. The initial false value is completely ignored. */
   return (
     <>
       <div className="flex justify-center my-10">
