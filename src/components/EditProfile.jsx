@@ -8,10 +8,10 @@ import { addUser } from "../utils/userSlice";
 const EditProfile = ({ user }) => {
   const [firstName, setFirstName] = useState(user.firstName);
   const [lastName, setLastName] = useState(user.lastName);
-  const [photoUrl, setPhotoUrl] = useState(user.photoUrl);
-  const [age, setAge] = useState(user.age);
-  const [gender, setGender] = useState(user.gender);
-  const [about, setAbout] = useState(user.about);
+  const [photoUrl, setPhotoUrl] = useState(user?.photoUrl);
+  const [age, setAge] = useState(user.age || "");
+  const [gender, setGender] = useState(user.gender || "");
+  const [about, setAbout] = useState(user.about || "");
   const [error, setError] = useState("");
   const [showToast, setShowToast] = useState(false);
   const dispatch = useDispatch();
@@ -56,7 +56,7 @@ So it only activates when the user actually clicks save. The initial false value
                 <fieldset className="fieldset">
                   <legend className="fieldset-legend">First Name</legend>
                   <textarea
-                    className="textarea-sm border border-gray-400 p-2"
+                    className="textarea-sm border border-gray-400 rounded-lg my-1 p-2"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
                   ></textarea>
@@ -64,7 +64,7 @@ So it only activates when the user actually clicks save. The initial false value
                 <fieldset className="fieldset">
                   <legend className="fieldset-legend">Last Name</legend>
                   <textarea
-                    className="textarea-sm border border-gray-400 p-2"
+                    className="textarea-sm border border-gray-400 rounded-lg my-1 p-2"
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
                   ></textarea>
@@ -72,7 +72,7 @@ So it only activates when the user actually clicks save. The initial false value
                 <fieldset className="fieldset">
                   <legend className="fieldset-legend">PHOTO URL</legend>
                   <textarea
-                    className="textarea-sm border border-gray-400 p-2"
+                    className="textarea-sm border border-gray-400 rounded-lg my-1 p-2 h-24"
                     value={photoUrl}
                     onChange={(e) => setPhotoUrl(e.target.value)}
                   ></textarea>
@@ -81,7 +81,7 @@ So it only activates when the user actually clicks save. The initial false value
                 <fieldset className="fieldset">
                   <legend className="fieldset-legend">Age</legend>
                   <textarea
-                    className="textarea-sm border border-gray-400 p-2"
+                    className="textarea-sm border border-gray-400 rounded-lg my-1 p-2"
                     value={age}
                     onChange={(e) => setAge(e.target.value)}
                   ></textarea>
@@ -89,10 +89,13 @@ So it only activates when the user actually clicks save. The initial false value
                 <fieldset className="fieldset">
                   <legend className="fieldset-legend">Gender</legend>
                   <select
-                    className="textarea-sm border border-gray-400 p-2"
+                    className="textarea-sm border border-gray-400 rounded-lg my-1 p-2"
                     value={gender}
                     onChange={(e) => setGender(e.target.value)}
                   >
+                    <option value="" disabled>
+                      Select gender
+                    </option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="other">Other</option>
@@ -101,7 +104,7 @@ So it only activates when the user actually clicks save. The initial false value
                 <fieldset className="fieldset">
                   <legend className="fieldset-legend">About</legend>
                   <textarea
-                    className="textarea-sm border border-gray-400 p-2"
+                    className="textarea-sm border border-gray-400 rounded-lg my-1 p-2 h-24"
                     value={about}
                     onChange={(e) => setAbout(e.target.value)}
                   ></textarea>
